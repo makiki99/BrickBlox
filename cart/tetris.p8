@@ -322,7 +322,7 @@ function _update60()
 				g.hold -= 6
 			end
 		end
-		if btn(3) or g.g_delay > g.g_max then
+		if btn(3) or g.g_delay >= g.g_max then
 			local cleared = 0
 			g.g_delay = 0
 			if btn(3) and g.are <= 0 then
@@ -352,9 +352,8 @@ function _update60()
 					g.are += 10
 				end
 			end
-		else
-			g.g_delay += 1
 		end
+		g.g_delay += 1
 		if btn(4) then
 			if not g.a_press then
 				rotate(-1)
